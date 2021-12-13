@@ -9,5 +9,5 @@
       tomcat_ver: 9.0.56
       tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_ver.split('.')[0]}}/v{{tomcat_ver}}/bin/apache-tomcat-{{tomcat_ver}}.tar.gz
     tasks:
-    - name: rename the apache folder
-      command: mv /usr/local/apache-tomcat-{{tomcat_ver}} /usr/local/latest
+    - name: Starting Tomcat
+      shell: /usr/local/latest/bin/startup.sh
