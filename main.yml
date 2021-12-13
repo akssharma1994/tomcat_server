@@ -35,7 +35,9 @@
         remote_src: yes
     - name: rename the apache folder
       command: mv /usr/local/apache-tomcat-{{tomcat_ver}} /usr/local/latest
-
+    - name: Changing tomcat_port
+      template:
+        src: server.xml.j2
+        dest: /usr/local/latest/conf/server.xml
     - name: Starting Tomcat
       shell: nohup /usr/local/latest/bin/startup.sh &
-
