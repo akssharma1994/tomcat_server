@@ -15,4 +15,4 @@
       alternatives:
         name: java
         link: /usr/bin/java
-        path: /usr/lib/jvm/jre-1.8.0-openjdk/usr/bin/java
+        path: /usr/lib/jvm/jre-1.8.0-openjdk/bin/java
