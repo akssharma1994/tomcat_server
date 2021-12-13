@@ -1,8 +1,10 @@
 ---
   - name: Installing Tomcat-9
     hosts: web
-    gather_facts: true
+    gather_facts: false
     become: yes
+    vars: 
+      req_java= java-1.8.0-openjdk
     tasks:
     - name: Update repos
       yum:
@@ -10,7 +12,7 @@
         state: latest
     - name: Installing java
       yum:
-        name: java-1.8.0-openjdk
+        name: "{{req_java}}"
     - name: Setting default java
       alternatives:
         name: java
