@@ -11,4 +11,6 @@
     tasks:
 
     - name: Downloading Tomcat
-      debug: var=tomcat_url
+      get_url:
+        url: "{{tomcat_url}}"
+        dest: /usr/local
