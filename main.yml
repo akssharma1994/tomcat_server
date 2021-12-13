@@ -6,6 +6,10 @@
     vars: 
       req_java: java-1.8.0-openjdk
       set_java: jre-1.8.0-openjdk
+      tomcat_ver: 9.0.56
+      tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_ver.split('.')[0]}}/v{{tomcat_ver}}/bin/apache-tomcat-{{tomcat_ver}}.tar.gz
+      tomcat_port: 8090
+
     tasks:
     - name: Update repos
       yum:
@@ -31,6 +35,7 @@
         remote_src: yes
     - name: rename the apache folder
       command: mv /usr/local/apache-tomcat-{{tomcat_ver}} /usr/local/latest
-      
+
     - name: Starting Tomcat
       shell: nohup /usr/local/latest/bin/startup.sh &
+
