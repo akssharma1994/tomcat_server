@@ -9,9 +9,8 @@
       tomcat_ver: 9.0.56
       tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_ver.split('.')[0]}}/v{{tomcat_ver}}/bin/apache-tomcat-{{tomcat_ver}}.tar.gz
     tasks:
-
     - name: Unzip tar file
       unarchive:
         src: /usr/local/apache-tomcat-{{tomcat_ver}}.tar.gz
         dest: /usr/local
-      remote_src: yes
+        remote_src: yes
