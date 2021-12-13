@@ -5,6 +5,7 @@
     become: yes
     vars: 
       req_java: java-1.8.0-openjdk
+      set_java: jre-1.8.0-openjdk
     tasks:
     - name: Update repos
       yum:
@@ -17,4 +18,4 @@
       alternatives:
         name: java
         link: /usr/bin/java
-        path: /usr/lib/jvm/jre-1.8.0-openjdk/bin/java
+        path: /usr/lib/jvm/set_java/bin/java
